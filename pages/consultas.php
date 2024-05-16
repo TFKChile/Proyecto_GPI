@@ -1,4 +1,6 @@
-<?php include '../includes/Consulta_Materia_Prima.php'; ?>
+<?php include '../includes/Consulta_Materia_Prima.php'; 
+      include '../templates/menu.php';
+?>
 
 <!DOCTYPE html>
 <html lang="es">

@@ -1,15 +1,19 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <link rel="stylesheet" href="assets/css/Styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Styled Menu</title>
+    <link rel="stylesheet" href="assets/css/menu.css">
 </head>
 <body>
-    <button> <a href="pages/ingresos.php"> Registro materia prima</a></button>
-    <button> <a href="pages/consultas.php"> Consulta materias primas</a></button>
-    <button> <a href="pages/transacciones.php"> Transacciones</a></button>
+    <nav>
+        <ul class="menu">
+            <li><a href="pages/ingresos.php">Ingreso Materias Primas</a></li>
+            <li><a href="pages/transacciones.php">Transacciones</a></li>
+            <li><a href="pages/consultas.php">Infor Materias Primas</a></li>
+            <li><a href="pages/salida.php">Salidas</a></li>
+        </ul>
+    </nav>
 </body>
 </html>
