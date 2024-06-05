@@ -1,22 +1,22 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+html, body {
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Comic Neue", cursive;
+    background-color: #1c1c1c;
 }
-
 h2 {
     text-align: center;
-    color: #333;
+    color: whitesmoke;
 }
 
 .formulario {
     max-width: 400px;
     margin: auto;
     padding: 1em;
-    border: 1px solid #ccc;
     border-radius: 1em;
-    background-color: #fff;
+    background-color: #18171c;
 }
 
 .formulario div + div {
@@ -26,7 +26,7 @@ h2 {
 label {
     display: block;
     margin-bottom: 0.5em;
-    color: #333333;
+    color: white;
 }
 
 input[type="text"],
@@ -41,15 +41,17 @@ input[type="email"] {
 
 input[type="submit"] {
     padding: 1em;
-    color: #fff;
-    background-color: #007BFF;
+    color: white;
+    background-color: #20214f;
     border: none;
     border-radius: 0.5em;
     cursor: pointer;
     width: 100%;
     box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #2a493c;
+    
 }
