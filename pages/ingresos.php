@@ -26,7 +26,7 @@
             <input type="email" id="mail" name="mail">
         </div>
         <div>
-            <label for="cod_barras">Codigo de barras:</label>
+            <label for="cod_barras">Código de barras:</label>
             <input type="text" id="cod_barras" name="cod_barras" pattern="[0-9]+" required>
         </div>
         <div>
@@ -34,16 +34,40 @@
             <input type="text" id="nombre_materia_prima" name="nombre_materia_prima" required>
         </div>
         <div>
-            <label for="unidad_medida">Unidad de Medida:</label>
-            <input type="text" id="unidad_medida" name="unidad_medida" required>
+            <label for="unidad_medida_individual">Unidad de Medida Individual:</label>
+            <input type="text" id="unidad_medida_individual" name="unidad_medida_individual" required>
+        </div>
+        <div>
+            <label for="unidad_medida_pack">Unidad de Medida Pack:</label>
+            <input type="text" id="unidad_medida_pack" name="unidad_medida_pack" required>
+        </div>
+        <div>
+            <label for="cantidad_pack">Cantidad por Pack:</label>
+            <input type="text" id="cantidad_pack" name="cantidad_pack" pattern="[0-9]+" required>
         </div>
         <div>
             <label for="stock_critico">Stock Crítico:</label>
             <input type="text" id="stock_critico" name="stock_critico" pattern="[0-9]+" required>
         </div>
         <div>
-            <label for="ubicacion">Ubicación:</label>
-            <input type="text" id="ubicacion" name="ubicacion" required>
+            <label for="ubicacion_piso">Ubicación (Piso):</label>
+            <input type="text" id="ubicacion_piso" name="ubicacion_piso" required>
+        </div>
+        <div>
+            <label for="ubicacion_mueble">Ubicación (Mueble):</label>
+            <input type="text" id="ubicacion_mueble" name="ubicacion_mueble" required>
+        </div>
+        <div>
+            <label for="ubicacion_repisa">Ubicación (Repisa):</label>
+            <input type="text" id="ubicacion_repisa" name="ubicacion_repisa" required>
+        </div>
+        <div>
+            <label for="marca">Marca:</label>
+            <input type="text" id="marca" name="marca" required>
+        </div>
+        <div>
+            <label for="detalle">Detalle:</label>
+            <input type="text" id="detalle" name="detalle" required>
         </div>
         <div>
             <input type="submit" value="Insertar">

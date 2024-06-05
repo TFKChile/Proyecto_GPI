@@ -22,11 +22,11 @@ include '../templates/menu.php';
                     <tr>
                         <th>Nombre</th>
                         <th>Unidad de Medida</th>
-                        <th>Marca</th>
                         <th>Ubicación</th>
-                        <th>Stock/kg</th>
-                        <th>Stock Crítico/kg</th>
-                        <th>Precio/kg</th>
+                        <th>Stock</th>
+                        <th>Stock mínimo</th>
+                        <th>Stock/Unidad Medida</th>
+                        <th>Precio/Unidad Medida</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,15 +34,14 @@ include '../templates/menu.php';
                     if ($materia_prima) {
                         foreach ($materia_prima as $row) {
                             $ubicacion = $row['Ubicacion_Piso'] . ', ' . $row['Ubicacion_Mueble'] . ', ' . $row['Ubicacion_Repisa'];
-                            $precio_por_unidad = $row['Precio'] . ' pesos/kg';
                             echo "<tr>
                                     <td><a href='proveedores.php?cod_barras={$row['COD_BARRAS']}'>{$row['Nombre']}</a></td>
-                                    <td>{$row['Unidad_Medida']}</td>
-                                    <td>{$row['Marca']}</td>
+                                    <td>{$row['Unidad_Medida_Pack']}</td>
                                     <td>{$ubicacion}</td>
-                                    <td>{$row['Stock']}/kg</td>
-                                    <td>{$row['Stock_Critico']}/kg</td>
-                                    <td>{$precio_por_unidad}</td>
+                                    <td>{$row['Stock']} {$row['Unidad_Medida_Pack']}</td>
+                                    <td>{$row['Stock_Critico']} {$row['Unidad_Medida_Pack']}</td>
+                                    <td>{$row['Stock_Unidad']} {$row['Unidad_Medida']}</td>
+                                    <td>{$row['Precio_Unidad']} pesos/{$row['Unidad_Medida']}</td>
                                   </tr>";
                         }
                     } else {

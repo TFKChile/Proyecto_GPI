@@ -17,7 +17,7 @@ include '../templates/menu.php';
     <div class="container">
         <div class="table-container">
             <h2>Datos del Proveedor</h2>
-            <?php if ($proveedor): ?>
+            <?php if (!empty($proveedores)): ?>
                 <table>
                     <thead>
                         <tr>
@@ -25,15 +25,19 @@ include '../templates/menu.php';
                             <th>Teléfono</th>
                             <th>Email</th>
                             <th>Tiempo de Entrega</th>
+                            <th>Marca</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><?php echo $proveedor['Proveedor']; ?></td>
-                            <td><?php echo $proveedor['TELEFONO']; ?></td>
-                            <td><?php echo $proveedor['MAIL']; ?></td>
-                            <td><?php echo $proveedor['TIEMPO_ENTREGA']; ?></td>
-                        </tr>
+                        <?php foreach ($proveedores as $proveedor): ?>
+                            <tr>
+                                <td><?php echo $proveedor['Proveedor']; ?></td>
+                                <td><?php echo $proveedor['TELEFONO']; ?></td>
+                                <td><?php echo $proveedor['MAIL']; ?></td>
+                                <td><?php echo $proveedor['DETALLE']; ?></td>
+                                <td><?php echo $proveedor['Marca']; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             <?php else: ?>
