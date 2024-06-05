@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <script src="../assets/js/validacion.js"></script>
 </head>
 <body>
     <h2>Transacciones de salida</h2>
@@ -24,21 +25,5 @@
             <input type="submit" value="Insertar">
         </div>
     </form>
-    <script>
-        // Validación de entrada para campos de cantidad y precio
-        document.getElementById('cod_barras').addEventListener('input', function(event) {
-            var input = event.target;
-            if (!/^\d*$/.test(input.value)) {
-                input.value = input.value.replace(/[^\d]/g, '');
-            }
-        });
-
-        document.getElementById('cantidad_Salida').addEventListener('input', function(event) {
-            var input = event.target;
-            if (!/^\d*$/.test(input.value)) {
-                input.value = input.value.replace(/[^\d]/g, '');
-            }
-        });
-    </script>
 </body>
 </html>

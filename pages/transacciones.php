@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Ingresar Transacción</title>
     <link rel="stylesheet" type="text/css" href="../assets/css/transaccion.css">
+    <script src="../assets/js/validacion.js"></script>
 </head>
 <body>
     <h2>Ingresar Transacción</h2>
@@ -26,29 +27,6 @@
         </div>
     </form>
 
-    <script>
-        // Validación de entrada para campos de cantidad y precio
-        document.getElementById('cod_barras').addEventListener('input', function(event) {
-            var input = event.target;
-            if (!/^\d*$/.test(input.value)) {
-                input.value = input.value.replace(/[^\d]/g, '');
-            }
-        });
-
-        document.getElementById('cantidad_compra').addEventListener('input', function(event) {
-            var input = event.target;
-            if (!/^\d*$/.test(input.value)) {
-                input.value = input.value.replace(/[^\d]/g, '');
-            }
-        });
-
-        document.getElementById('precio_compra').addEventListener('input', function(event) {
-            var input = event.target;
-            if (!/^\d*\.?\d*$/.test(input.value)) {
-                input.value = input.value.replace(/[^\d.]/g, '');
-            }
-        });
-    </script>
 </body>
 </html>
 
