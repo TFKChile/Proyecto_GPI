@@ -21,41 +21,32 @@ include '../templates/menu.php';
                 <thead>
                     <tr>
                         <th>Nombre</th>
-                        <th>Stock</th>
-                        <th>Stock Crítico</th>
                         <th>Unidad de Medida</th>
+                        <th>Marca</th>
                         <th>Ubicación</th>
+                        <th>Stock/kg</th>
+                        <th>Stock Crítico/kg</th>
+                        <th>Precio/kg</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    // Mostrar primero los productos con stock menor que el stock crítico
                     if ($materia_prima) {
                         foreach ($materia_prima as $row) {
-                            if ($row['Stock'] < $row['Stock_Critico']) {
-                                echo "<tr style='background-color: #d4635c;'>
-                                        <td><a href='../pages/proveedores.php'>{$row['Nombre']}</a></td>
-                                        <td>{$row['Stock']}</td>
-                                        <td>{$row['Stock_Critico']}</td>
-                                        <td>{$row['Unidad_Medida']}</td>
-                                        <td>{$row['Ubicacion']}</td>
-                                      </tr>";
-                            }
-                        }
-                        // Luego, mostrar los demás productos
-                        foreach ($materia_prima as $row) {
-                            if ($row['Stock'] >= $row['Stock_Critico']) {
-                                echo "<tr>
-                                        <td><a href='../pages/proveedores.php'>{$row['Nombre']}</a></td>
-                                        <td>{$row['Stock']}</td>
-                                        <td>{$row['Stock_Critico']}</td>
-                                        <td>{$row['Unidad_Medida']}</td>
-                                        <td>{$row['Ubicacion']}</td>
-                                      </tr>";
-                            }
+                            $ubicacion = $row['Ubicacion_Piso'] . ', ' . $row['Ubicacion_Mueble'] . ', ' . $row['Ubicacion_Repisa'];
+                            $precio_por_unidad = $row['Precio'] . ' pesos/kg';
+                            echo "<tr>
+                                    <td><a href='proveedores.php?cod_barras={$row['COD_BARRAS']}'>{$row['Nombre']}</a></td>
+                                    <td>{$row['Unidad_Medida']}</td>
+                                    <td>{$row['Marca']}</td>
+                                    <td>{$ubicacion}</td>
+                                    <td>{$row['Stock']}/kg</td>
+                                    <td>{$row['Stock_Critico']}/kg</td>
+                                    <td>{$precio_por_unidad}</td>
+                                  </tr>";
                         }
                     } else {
-                        echo "<tr><td colspan='5'>No se encontraron resultados</td></tr>";
+                        echo "<tr><td colspan='7'>No se encontraron resultados</td></tr>";
                     }
                     ?>
                 </tbody>
