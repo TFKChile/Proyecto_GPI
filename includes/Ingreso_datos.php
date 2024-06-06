@@ -60,17 +60,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     $id_ubicacion = $conexion->insert_id;
 
                                     // Insertar en tabla Materia_Prima
-                                    $sql_materia_prima = "INSERT INTO Materia_Prima (Cod_Barras, Nombre, Id_Unidad_Medida_Individual, Id_Ubicacion) VALUES ('$cod_barras','$nombre_materia_prima', '$id_umi', '$id_ubicacion')";
+                                    $sql_materia_prima = "INSERT INTO Materia_Prima (Cod_Barras, Nombre, Id_Unidad_Medida_Individual, Id_Ubicacion, Id_Marca) VALUES ('$cod_barras','$nombre_materia_prima', '$id_umi', '$id_ubicacion', '$id_marca')";
                                     if ($conexion->query($sql_materia_prima) === TRUE) {
                                         $id_materia_prima = $conexion->insert_id;
 
                                         // Insertar en tabla Provee
-                                        $sql_provee = "INSERT INTO Provee (Detalle, Id_Proveedor, Cod_Barras, Id_Marca) VALUES ('$detalle', '$id_proveedor', '$cod_barras', '$id_marca')";
+                                        $sql_provee = "INSERT INTO Provee (Detalle, Id_Proveedor, Cod_Barras) VALUES ('$detalle', '$id_proveedor', '$cod_barras')";
                                         if ($conexion->query($sql_provee) === TRUE) {
-                                            echo "Datos insertados correctamente en todas las tablas relacionadas";
+                                           
+                                            $sql_inventario = "INSERT INTO INVENTARIO (COD_BARRAS, STOCK, stock_minimo) VALUES ('$cod_barras', 0, '$stock_critico')";
+                                            if ($conexion->query($sql_inventario) === TRUE) {
+                                                echo "Datos insertados correctamente en todas las tablas relacionadas";
+                                            } else {
+                                                echo "Error al insertar datos en INVENTARIO: " . $conexion->error;
+                                            }
                                         } else {
                                             echo "Error al insertar datos en Provee: " . $conexion->error;
                                         }
+                                        
                                     } else {
                                         echo "Error al insertar datos en Materia_Prima: " . $conexion->error;
                                     }

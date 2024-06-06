@@ -11,15 +11,19 @@
     <script src="../assets/js/validacion.js"></script>
 </head>
 <body>
-    <h2>Transacciones de Salida</h2>
-    <form class="formulario" action="../includes/salida_transacciones.php" method="post">
+    <h2>Transacciones</h2>
+    <form class="formulario" action="../includes/ingreso_transacciones.php" method="post">
         <div>
             <label for="cod_barras">Código de Barras:</label>
             <input type="text" id="cod_barras" name="cod_barras" pattern="[0-9]+" required>
         </div>        
         <div>
-            <label for="cantidad_Salida">Cantidad de Salida:</label>
-            <input type="text" id="cantidad_Salida" name="cantidad_Salida" pattern="[0-9]+" required>
+            <label for="precio_compra">Precio Compra:</label>
+            <input type="text" id="precio_compra" name="precio_compra" pattern="[0-9]+" required>
+        </div>
+        <div>
+            <label for="cantidad_compra">Cantidad de compra</label>
+            <input type="text" id="cantidad_compra" name="cantidad_compra" pattern="[0-9]+" required>
         </div>
         <div>
             <input type="submit" value="Insertar">
