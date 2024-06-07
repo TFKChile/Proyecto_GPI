@@ -13,7 +13,7 @@
 <body>
     <nav>
         <ul class="menu">
-            <li><a href="../pages/ingresos.php">Transacciones</a></li>
+            <li><a href="../pages/ingresos.php">Ingreso de materias primas</a></li>
             <li><a href="../pages/consultas.php">Información Materias Primas</a></li>
         </ul>
     </nav>
