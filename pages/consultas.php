@@ -52,7 +52,7 @@ include '../templates/menu.php';
             </table>
         </div>
         <div class="links">
-            <a href="../pages/ingresos.php" class="btn">Ingreso</a>
+            <a href="../pages/transacciones.php" class="btn">Ingreso</a>
             <a href="../pages/salidas.php" class="btn">Salida</a>
         </div>
     </div>
